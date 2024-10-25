@@ -1,6 +1,6 @@
 CONFIG_MODULE_SIG=n
 obj-m = helloworld.o
-KVERSION = 6.10.11-200.fc40.x86_64
+KVERSION = $(shell uname -r)
 
 all:
 	make -C /lib/modules/$(KVERSION)/build M=$(PWD) modules

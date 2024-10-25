@@ -37,7 +37,7 @@ static ssize_t my_read(struct file* file, char __user* buffer, size_t len, loff_
 
     if (copy_to_user(buffer, moi + *offset, len))
     {
-		printk(KERN_ERR "Error copying to user\n");
+		pr_err( "Error copying to user\n");
         return -EFAULT;
     }
         
@@ -69,13 +69,13 @@ static int __init init_my_module(void)
 	int ret = alloc_chrdev_region(&major, minor, MINOR_COUNT, DEVICE_NAME);
 	if (ret < 0)
 	{
-		printk(KERN_ERR "Error allocating major/minor numbers: %d\n", ret);
+		pr_err("Error allocating major/minor numbers: %d\n", ret);
 		return -1;
 	}
 	cdev_init(&my_cdev, &my_fops);
 	if (cdev_add(&my_cdev, major, MINOR_COUNT) < 0)
 	{
-		printk(KERN_ERR "Error adding char device\n");
+		pr_err("Error adding char device\n");
 		return -1;
 	}
 
