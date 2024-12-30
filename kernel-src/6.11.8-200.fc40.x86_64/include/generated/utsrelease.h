@@ -1,1 +1,0 @@
-#define UTS_RELEASE "6.11.8-200.fc40.x86_64"
