@@ -6,3 +6,5 @@
 *.mod.c
 *.mod
 *.symvers
+set-key
+decryptor
