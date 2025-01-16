@@ -1,5 +1,9 @@
 # Encryptor character device
 
+Operating systems course project
+
+Report below
+
 Developement was done on a virtual machine running Fedora 40 with the kernel version being
 6.11.8-200.fc40.x86_64
 
